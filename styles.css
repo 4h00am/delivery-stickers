@@ -21,7 +21,7 @@ body {
 
 .hero {
   position: relative;
-  padding: calc(3rem + env(safe-area-inset-top)) 1.2rem 3rem;
+  padding: calc(3rem + env(safe-area-inset-top)) 1.2rem 2rem;
   text-align: center;
   overflow: hidden;
 
@@ -29,23 +29,24 @@ body {
   color: white;
 }
 
-/* Curva côncava para cima */
+/* Curva côncava correta (bege sobe suavemente) */
 .hero::after {
   content: "";
   position: absolute;
-  bottom: -1px;
-  left: 0;
-  width: 100%;
-  height: 120px;
+  bottom: -70px;
+  left: -10%;
+  width: 120%;
+  height: 140px;
   background: var(--beige);
-  clip-path: ellipse(75% 100% at 50% 0%);
+  border-radius: 50%;
+  z-index: 1;
 }
 
 .hero-content {
-  max-width: 720px;
-  margin: auto;
   position: relative;
   z-index: 2;
+  max-width: 720px;
+  margin: auto;
 }
 
 h1 {
@@ -59,19 +60,20 @@ h1 {
   color: #fff5ec;
 }
 
+/* SVG SEM SOMBRA */
 .stickers-art {
   width: 100%;
   max-width: 420px;
   margin: 2rem auto 0;
   display: block;
-  filter: drop-shadow(0 25px 35px rgba(0,0,0,0.3));
+  filter: none;
 }
 
 /* ================= OFFER SECTION ================= */
 
 .offer-section {
   background: var(--beige);
-  padding: 3.5rem 1.2rem 2rem;
+  padding: 5rem 1.2rem 2rem;
   text-align: center;
 }
 
@@ -137,7 +139,7 @@ h1 {
   margin: auto;
 }
 
-/* Brush style */
+/* Brush */
 
 .brush-title {
   text-align: center;
