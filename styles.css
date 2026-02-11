@@ -17,22 +17,30 @@ body {
   background: #f6e9d6;
 }
 
+/* Remove limitação lateral do layout */
 .page {
-  width: min(100% - 1.2rem, 720px);
-  margin: auto;
+  width: 100%;
+  margin: 0;
   padding-bottom: 2.5rem;
 }
 
-/* ================= HERO ================= */
+/* ================= HERO FULL WIDTH ================= */
 
 .hero {
+  width: 100%;
+  padding: 2.5rem 1.2rem 3rem;
   text-align: center;
-  padding: 2rem 0 2.5rem;
   background: linear-gradient(180deg, #ff3c00 0%, #ff7a00 100%);
+  color: white;
   border-bottom-left-radius: 40px;
   border-bottom-right-radius: 40px;
-  color: white;
-  position: relative;
+}
+
+/* Conteúdo interno controlado */
+.hero > * {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 h1 {
@@ -46,13 +54,11 @@ h1 {
   margin-top: 1rem;
   font-size: 1rem;
   color: #fff5ec;
-  padding: 0 0.8rem;
 }
 
-/* ARTE */
-
 .stickers-art {
-  width: 95%;
+  width: 100%;
+  max-width: 420px;
   margin: 1.5rem auto 1rem;
   display: block;
   filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.3));
@@ -79,19 +85,20 @@ h1 {
   background: #fff;
   display: inline-block;
   padding: 0.4rem 1.2rem;
-  border-radius: 14px;
+  border-radius: 16px;
   margin-top: 0.4rem;
   box-shadow: var(--shadow);
 }
 
-/* ================= BOTÃO ================= */
+/* BOTÃO */
 
 .cta-btn {
   display: block;
-  width: 92%;
+  width: 100%;
+  max-width: 480px;
   margin: 1.4rem auto;
   padding: 1.1rem;
-  border-radius: 18px;
+  border-radius: 20px;
   text-align: center;
   font-weight: 800;
   font-size: 1.2rem;
@@ -107,21 +114,18 @@ h1 {
   box-shadow: 0 3px 0 #8e0b07;
 }
 
-.cta-btn.secondary {
-  font-size: 1rem;
-}
-
 .microcopy {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   color: #fff;
-  margin-top: -0.5rem;
   opacity: 0.9;
 }
 
 /* ================= SEÇÕES ================= */
 
 .content-section {
-  padding: 2rem 0;
+  padding: 2rem 1.2rem;
+  max-width: 720px;
+  margin: auto;
 }
 
 .brush-title {
@@ -145,7 +149,6 @@ h1 {
 .check-list {
   list-style: none;
   margin-top: 1rem;
-  padding: 0 0.5rem;
 }
 
 .check-list li {
@@ -175,28 +178,18 @@ h1 {
   background: var(--green);
 }
 
-/* ================= GARANTIA ================= */
+/* GARANTIA */
 
 .guarantee {
   text-align: center;
   background: linear-gradient(90deg, #2faa2d, #1b7f23);
-  padding: 1.5rem 1rem;
-  border-radius: 18px;
+  padding: 1.5rem 1.2rem;
+  border-radius: 20px;
   color: #fff;
-  margin-top: 1rem;
+  margin: 2rem auto 0;
+  max-width: 720px;
   box-shadow: var(--shadow);
 }
-
-.guarantee h2 {
-  font-size: 1.2rem;
-}
-
-.guarantee p {
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
-}
-
-/* ================= FOOTER ================= */
 
 .footer {
   text-align: center;
