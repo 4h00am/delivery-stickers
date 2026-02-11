@@ -1,9 +1,8 @@
 :root {
-  --ink: #432320;
+  --beige: #f4e7d3;
   --red: #e61f17;
   --green: #1f8f3a;
-  --beige: #f4e7d3;
-  --shadow: 0 14px 35px rgba(0, 0, 0, 0.25);
+  --shadow: 0 14px 35px rgba(0,0,0,0.25);
 }
 
 * {
@@ -15,98 +14,86 @@
 body {
   font-family: 'Poppins', sans-serif;
   background: #ff3c00;
-  color: var(--ink);
+  color: #432320;
 }
 
 /* ================= HERO ================= */
 
 .hero {
   position: relative;
-  padding: calc(3rem + env(safe-area-inset-top)) 1.2rem 7rem;
+  padding: calc(3rem + env(safe-area-inset-top)) 1.2rem 3rem;
   text-align: center;
   overflow: hidden;
 
-  background: radial-gradient(circle at 50% 40%, #ff7a00 0%, #ff4a00 45%, #ff2e00 100%);
+  background: radial-gradient(circle at 50% 40%, #ff7a00 0%, #ff4a00 50%, #ff2e00 100%);
   color: white;
 }
 
-/* brilho atrás das figurinhas */
-.hero::before {
-  content: "";
-  position: absolute;
-  top: 55%;
-  left: 50%;
-  width: 500px;
-  height: 500px;
-  transform: translate(-50%, -50%);
-  background: radial-gradient(circle, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.08) 40%, transparent 70%);
-  z-index: 0;
-}
-
-/* CURVA PERFEITA */
+/* Curva côncava para cima */
 .hero::after {
   content: "";
   position: absolute;
   bottom: -1px;
   left: 0;
   width: 100%;
-  height: 140px;
+  height: 120px;
   background: var(--beige);
-  clip-path: ellipse(75% 100% at 50% 100%);
-  z-index: 1;
+  clip-path: ellipse(75% 100% at 50% 0%);
 }
 
 .hero-content {
-  position: relative;
-  z-index: 2;
   max-width: 720px;
   margin: auto;
+  position: relative;
+  z-index: 2;
 }
 
 h1 {
   font-size: clamp(1.8rem, 7vw, 3rem);
-  line-height: 1.1;
   font-weight: 800;
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+  line-height: 1.1;
 }
 
 .hero-description {
   margin-top: 1rem;
-  font-size: 1rem;
   color: #fff5ec;
 }
 
 .stickers-art {
   width: 100%;
   max-width: 420px;
-  margin: 2rem auto 1.2rem;
+  margin: 2rem auto 0;
   display: block;
-  filter: drop-shadow(0 25px 35px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(0 25px 35px rgba(0,0,0,0.3));
 }
 
-/* PREÇO */
+/* ================= OFFER SECTION ================= */
+
+.offer-section {
+  background: var(--beige);
+  padding: 3.5rem 1.2rem 2rem;
+  text-align: center;
+}
 
 .price-wrapper {
-  margin-top: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .old-price {
   display: block;
   text-decoration: line-through;
-  color: #fff;
-  opacity: 0.8;
-  font-size: 0.9rem;
+  opacity: 0.6;
+  margin-bottom: 0.5rem;
 }
 
 .price {
-  font-size: clamp(2.8rem, 10vw, 4rem);
+  font-size: clamp(2.5rem, 10vw, 3.5rem);
   font-weight: 800;
   color: #138a39;
   background: #ffffff;
   display: inline-block;
-  padding: 0.5rem 1.4rem;
-  border-radius: 20px;
-  margin-top: 0.5rem;
+  padding: 0.6rem 1.6rem;
+  border-radius: 22px;
   box-shadow: var(--shadow);
 }
 
@@ -114,17 +101,14 @@ h1 {
 
 .cta-btn {
   display: block;
-  width: 100%;
   max-width: 480px;
-  margin: 1.6rem auto;
-  padding: 1.3rem;
-  border-radius: 26px;
-  text-align: center;
+  margin: 1.8rem auto;
+  padding: 1.2rem;
+  border-radius: 28px;
   font-weight: 800;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   text-decoration: none;
   color: white;
-
   background: linear-gradient(180deg, #ff2e1f, #c90d08);
   box-shadow: 0 10px 0 #8e0b07, var(--shadow);
   transition: 0.2s;
@@ -137,17 +121,14 @@ h1 {
 
 .microcopy {
   font-size: 0.85rem;
-  color: #fff;
-  opacity: 0.9;
+  opacity: 0.8;
 }
 
-/* ================= CONTEÚDO ================= */
+/* ================= RESTANTE ================= */
 
 .page {
   background: var(--beige);
-  margin-top: -90px;
-  padding-top: 120px;
-  padding-bottom: 2.5rem;
+  padding-bottom: 3rem;
 }
 
 .content-section {
@@ -156,13 +137,15 @@ h1 {
   margin: auto;
 }
 
+/* Brush style */
+
 .brush-title {
   text-align: center;
   padding: 0.6rem;
   font-weight: 800;
-  font-size: clamp(1.2rem, 5vw, 1.8rem);
-  color: #fff;
-  border-radius: 16px;
+  font-size: 1.4rem;
+  color: white;
+  border-radius: 14px;
   margin-bottom: 1.2rem;
 }
 
@@ -170,18 +153,14 @@ h1 {
   background: linear-gradient(90deg, #ff2d1c, #d9150f);
 }
 
-.brush-green {
-  background: linear-gradient(90deg, #2faa2d, #1b7f23);
-}
-
 .check-list {
   list-style: none;
 }
 
 .check-list li {
-  padding-left: 2.2rem;
-  position: relative;
+  padding-left: 2rem;
   margin-bottom: 1rem;
+  position: relative;
   font-weight: 600;
 }
 
@@ -192,35 +171,10 @@ h1 {
   top: 0;
   background: var(--red);
   color: white;
-  width: 1.6rem;
-  height: 1.6rem;
+  width: 1.5rem;
+  height: 1.5rem;
   border-radius: 50%;
   display: grid;
   place-items: center;
   font-size: 0.9rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
-
-.check-list-green li::before {
-  background: var(--green);
-}
-
-/* GARANTIA */
-
-.guarantee {
-  text-align: center;
-  background: linear-gradient(90deg, #2faa2d, #1b7f23);
-  padding: 1.6rem 1.2rem;
-  border-radius: 26px;
-  color: #fff;
-  margin: 2rem auto 0;
-  max-width: 720px;
-  box-shadow: var(--shadow);
-}
-
-.footer {
-  text-align: center;
-  margin-top: 1.5rem;
-  font-size: 0.75rem;
-  opacity: 0.7;
 }
