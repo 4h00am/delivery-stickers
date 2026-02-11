@@ -1,8 +1,8 @@
 :root {
   --ink: #432320;
   --red: #e61f17;
-  --green: #2f8f2d;
-  --shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  --green: #1f8f3a;
+  --shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
 }
 
 * {
@@ -14,30 +14,29 @@
 body {
   font-family: 'Poppins', sans-serif;
   color: var(--ink);
-  background: linear-gradient(
-    180deg,
-    #ff4e1f 0%,
-    #ff7a19 35%,
-    #ff9c2d 50%,
-    #f8ecd9 50%
-  );
+  background: #f6e9d6;
 }
 
 .page {
   width: min(100% - 1.2rem, 720px);
   margin: auto;
-  padding: 1.5rem 0 2.5rem;
+  padding-bottom: 2.5rem;
 }
 
-/* HERO */
+/* ================= HERO ================= */
 
 .hero {
   text-align: center;
+  padding: 2rem 0 2.5rem;
+  background: linear-gradient(180deg, #ff3c00 0%, #ff7a00 100%);
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  color: white;
+  position: relative;
 }
 
 h1 {
-  color: #fff;
-  font-size: clamp(1.8rem, 7vw, 3.5rem);
+  font-size: clamp(1.8rem, 7vw, 3rem);
   line-height: 1.1;
   font-weight: 800;
   text-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
@@ -45,15 +44,21 @@ h1 {
 
 .hero-description {
   margin-top: 1rem;
-  font-size: clamp(1rem, 4vw, 1.4rem);
+  font-size: 1rem;
   color: #fff5ec;
+  padding: 0 0.8rem;
 }
 
+/* ARTE */
+
 .stickers-art {
-  width: 92%;
-  margin: 1rem auto;
+  width: 95%;
+  margin: 1.5rem auto 1rem;
   display: block;
+  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.3));
 }
+
+/* PREÇO */
 
 .price-wrapper {
   margin-top: 0.5rem;
@@ -63,88 +68,90 @@ h1 {
   display: block;
   text-decoration: line-through;
   color: #fff;
-  opacity: 0.7;
+  opacity: 0.8;
   font-size: 0.9rem;
 }
 
 .price {
-  font-size: clamp(2.5rem, 10vw, 4rem);
+  font-size: clamp(2.8rem, 10vw, 4rem);
   font-weight: 800;
   color: #138a39;
   background: #fff;
   display: inline-block;
-  padding: 0.3rem 1rem;
-  border-radius: 12px;
-  margin-top: 0.3rem;
+  padding: 0.4rem 1.2rem;
+  border-radius: 14px;
+  margin-top: 0.4rem;
+  box-shadow: var(--shadow);
 }
 
-/* BOTÃO */
+/* ================= BOTÃO ================= */
 
 .cta-btn {
   display: block;
-  width: 95%;
-  margin: 1.2rem auto;
-  padding: 1rem;
-  border-radius: 16px;
+  width: 92%;
+  margin: 1.4rem auto;
+  padding: 1.1rem;
+  border-radius: 18px;
   text-align: center;
   font-weight: 800;
   font-size: 1.2rem;
   text-decoration: none;
   color: white;
-  background: linear-gradient(180deg, #ff2e1f, #d6100a);
-  box-shadow: 0 6px 0 #9e0e0b, var(--shadow);
+  background: linear-gradient(180deg, #ff2e1f, #c90d08);
+  box-shadow: 0 6px 0 #8e0b07, var(--shadow);
   transition: 0.2s;
 }
 
 .cta-btn:active {
-  transform: translateY(3px);
-  box-shadow: 0 3px 0 #9e0e0b;
+  transform: translateY(4px);
+  box-shadow: 0 3px 0 #8e0b07;
 }
 
 .cta-btn.secondary {
   font-size: 1rem;
 }
 
-/* MICROCOPY */
-
 .microcopy {
   font-size: 0.8rem;
   color: #fff;
   margin-top: -0.5rem;
+  opacity: 0.9;
 }
 
-/* SEÇÕES */
+/* ================= SEÇÕES ================= */
 
 .content-section {
-  padding: 1.5rem 0;
+  padding: 2rem 0;
 }
 
 .brush-title {
   text-align: center;
-  padding: 0.4rem;
+  padding: 0.6rem;
   font-weight: 800;
-  font-size: clamp(1.3rem, 5vw, 2rem);
+  font-size: clamp(1.2rem, 5vw, 1.8rem);
   color: #fff;
-  border-radius: 10px;
+  border-radius: 12px;
+  margin-bottom: 1rem;
 }
 
 .brush-red {
-  background: var(--red);
+  background: linear-gradient(90deg, #ff2d1c, #d9150f);
 }
 
 .brush-green {
-  background: var(--green);
+  background: linear-gradient(90deg, #2faa2d, #1b7f23);
 }
 
 .check-list {
   list-style: none;
   margin-top: 1rem;
+  padding: 0 0.5rem;
 }
 
 .check-list li {
   padding-left: 2rem;
   position: relative;
-  margin-bottom: 0.7rem;
+  margin-bottom: 1rem;
   font-weight: 600;
 }
 
@@ -155,26 +162,33 @@ h1 {
   top: 0;
   background: var(--red);
   color: white;
-  width: 1.3rem;
-  height: 1.3rem;
+  width: 1.5rem;
+  height: 1.5rem;
   border-radius: 50%;
   display: grid;
   place-items: center;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 .check-list-green li::before {
   background: var(--green);
 }
 
-/* GARANTIA */
+/* ================= GARANTIA ================= */
 
 .guarantee {
   text-align: center;
-  background: linear-gradient(90deg, #3fa93d, #1f7b2a);
-  padding: 1.2rem;
-  border-radius: 14px;
+  background: linear-gradient(90deg, #2faa2d, #1b7f23);
+  padding: 1.5rem 1rem;
+  border-radius: 18px;
   color: #fff;
+  margin-top: 1rem;
+  box-shadow: var(--shadow);
+}
+
+.guarantee h2 {
+  font-size: 1.2rem;
 }
 
 .guarantee p {
@@ -182,11 +196,11 @@ h1 {
   font-size: 0.9rem;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 
 .footer {
   text-align: center;
   margin-top: 1.5rem;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   opacity: 0.7;
 }
