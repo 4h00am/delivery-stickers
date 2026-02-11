@@ -2,7 +2,8 @@
   --ink: #432320;
   --red: #e61f17;
   --green: #1f8f3a;
-  --shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  --beige: #f6e9d6;
+  --shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
 }
 
 * {
@@ -14,40 +15,52 @@
 body {
   font-family: 'Poppins', sans-serif;
   color: var(--ink);
-  background: #f6e9d6;
+  background: #ff3c00;
 }
 
-/* Remove limitação lateral do layout */
-.page {
-  width: 100%;
-  margin: 0;
-  padding-bottom: 2.5rem;
-}
-
-/* ================= HERO FULL WIDTH ================= */
+/* ================= HERO ================= */
 
 .hero {
-  width: 100%;
-  padding: 2.5rem 1.2rem 3rem;
+  position: relative;
+  padding: calc(3rem + env(safe-area-inset-top)) 1.2rem 6rem;
   text-align: center;
-  background: linear-gradient(180deg, #ff3c00 0%, #ff7a00 100%);
+  overflow: hidden;
+
+  background: linear-gradient(
+    180deg,
+    #ff2e00 0%,
+    #ff5a00 60%,
+    #ff7a00 100%
+  );
+
   color: white;
-  border-bottom-left-radius: 40px;
-  border-bottom-right-radius: 40px;
 }
 
-/* Conteúdo interno controlado */
-.hero > * {
+/* curva orgânica */
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  background: var(--beige);
+  border-top-left-radius: 100% 90px;
+  border-top-right-radius: 100% 90px;
+}
+
+.hero-content {
   max-width: 720px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
+  position: relative;
+  z-index: 2;
 }
 
 h1 {
   font-size: clamp(1.8rem, 7vw, 3rem);
   line-height: 1.1;
   font-weight: 800;
-  text-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
 }
 
 .hero-description {
@@ -59,15 +72,15 @@ h1 {
 .stickers-art {
   width: 100%;
   max-width: 420px;
-  margin: 1.5rem auto 1rem;
+  margin: 1.8rem auto 1rem;
   display: block;
-  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.3));
 }
 
 /* PREÇO */
 
 .price-wrapper {
-  margin-top: 0.5rem;
+  margin-top: 0.8rem;
 }
 
 .old-price {
@@ -82,10 +95,10 @@ h1 {
   font-size: clamp(2.8rem, 10vw, 4rem);
   font-weight: 800;
   color: #138a39;
-  background: #fff;
+  background: #ffffff;
   display: inline-block;
-  padding: 0.4rem 1.2rem;
-  border-radius: 16px;
+  padding: 0.4rem 1.3rem;
+  border-radius: 18px;
   margin-top: 0.4rem;
   box-shadow: var(--shadow);
 }
@@ -96,22 +109,22 @@ h1 {
   display: block;
   width: 100%;
   max-width: 480px;
-  margin: 1.4rem auto;
-  padding: 1.1rem;
-  border-radius: 20px;
+  margin: 1.5rem auto;
+  padding: 1.2rem;
+  border-radius: 22px;
   text-align: center;
   font-weight: 800;
   font-size: 1.2rem;
   text-decoration: none;
   color: white;
   background: linear-gradient(180deg, #ff2e1f, #c90d08);
-  box-shadow: 0 6px 0 #8e0b07, var(--shadow);
+  box-shadow: 0 8px 0 #8e0b07, var(--shadow);
   transition: 0.2s;
 }
 
 .cta-btn:active {
   transform: translateY(4px);
-  box-shadow: 0 3px 0 #8e0b07;
+  box-shadow: 0 4px 0 #8e0b07;
 }
 
 .microcopy {
@@ -120,7 +133,14 @@ h1 {
   opacity: 0.9;
 }
 
-/* ================= SEÇÕES ================= */
+/* ================= CONTEÚDO ================= */
+
+.page {
+  background: var(--beige);
+  margin-top: -60px;
+  padding-top: 80px;
+  padding-bottom: 2.5rem;
+}
 
 .content-section {
   padding: 2rem 1.2rem;
@@ -134,8 +154,8 @@ h1 {
   font-weight: 800;
   font-size: clamp(1.2rem, 5vw, 1.8rem);
   color: #fff;
-  border-radius: 12px;
-  margin-bottom: 1rem;
+  border-radius: 14px;
+  margin-bottom: 1.2rem;
 }
 
 .brush-red {
@@ -148,11 +168,10 @@ h1 {
 
 .check-list {
   list-style: none;
-  margin-top: 1rem;
 }
 
 .check-list li {
-  padding-left: 2rem;
+  padding-left: 2.2rem;
   position: relative;
   margin-bottom: 1rem;
   font-weight: 600;
@@ -165,13 +184,13 @@ h1 {
   top: 0;
   background: var(--red);
   color: white;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.6rem;
+  height: 1.6rem;
   border-radius: 50%;
   display: grid;
   place-items: center;
   font-size: 0.9rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .check-list-green li::before {
@@ -183,8 +202,8 @@ h1 {
 .guarantee {
   text-align: center;
   background: linear-gradient(90deg, #2faa2d, #1b7f23);
-  padding: 1.5rem 1.2rem;
-  border-radius: 20px;
+  padding: 1.6rem 1.2rem;
+  border-radius: 24px;
   color: #fff;
   margin: 2rem auto 0;
   max-width: 720px;
